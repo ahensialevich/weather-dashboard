@@ -3,11 +3,12 @@ import Main from './Containers/Main/Main';
 import { connect } from 'react-redux';
 import * as actions from './Store/Actions/index';
 import axios from './http/axios';
+import { GET_CITIES } from './http/urls';
 
 class App extends Component {
 
   async componentDidMount() {
-    await axios.get('https://jsonplaceholder.typicode.com/posts/');
+    this.props.onGetAllCities();
   }
 
   render() {
