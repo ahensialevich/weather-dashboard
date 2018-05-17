@@ -1,0 +1,3 @@
+export const ADD_CITY = 'ADD_CITY';
+export const GET_ALL_CITIES = 'GET_ALL_CITIES';
+export const GET_ALL_CITIES_SUCCEEDED = 'GET_ALL_CITIES_SUCCEEDED';

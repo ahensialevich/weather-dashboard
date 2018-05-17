@@ -18,7 +18,8 @@
     background: transparent;
     color: #BBDEFB;
     &::placeholder {
-        color: #1976D2;
+        color: #eaeaea;
+       // color: #1976D2;
     }
     &:focus {
         outline: 0;
@@ -41,6 +42,6 @@
     }
     &:hover {
         background: darken(#FFAF3C, 10%);
-        transform: rotate(180deg);
+        transform: rotate(90deg);
     }
 }
