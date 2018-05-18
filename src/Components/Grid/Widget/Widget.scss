@@ -1,4 +1,17 @@
 @import '../../../__var.scss';
+@mixin media() {
+    @media (max-width: 1258px) {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin icons($color, $pointer) {
+    color: $color;
+    @if $pointer=='true' {
+        cursor: pointer;
+    }
+}
+
 .Container {
     display: flex;
     flex-direction: column;
@@ -13,6 +26,7 @@
             font-size: 2rem;
             justify-self: center;
             align-self: center;
+            @include media();
         }
     }
     .Data {
@@ -22,13 +36,7 @@
         align-items: center;
         font-size: 2.5rem;
         color: $mainLightBlue;
-    }
-}
-
-@mixin icons($color, $pointer) {
-    color: $color;
-    @if $pointer=='true' {
-        cursor: pointer;
+        @include media();
     }
 }
 

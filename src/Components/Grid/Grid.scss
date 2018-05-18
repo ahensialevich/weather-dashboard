@@ -7,4 +7,13 @@
     grid-row-gap: 1vw;
     z-index: -7000;
     position: relative;
+    @media (max-width: 978px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (max-width: 718px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 474px) {
+        grid-template-columns: 1fr;
+    }
 }
