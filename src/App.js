@@ -7,7 +7,7 @@ import { GET_CITIES } from './http/urls';
 
 class App extends Component {
 
-  async componentDidMount() {
+  componentDidMount() {
     this.props.onGetAllCities();
   }
 

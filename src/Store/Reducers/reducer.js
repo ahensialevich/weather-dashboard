@@ -1,7 +1,8 @@
 import * as actionTypes from '../Actions/actionTypes';
 
 const initialState = {
-    cities: []
+    cities: [],
+    subscribedCities: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -10,6 +11,12 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 cities: action.cities
+            }
+        }
+        case actionTypes.ADD_CITY: {
+            return {
+                ...state,
+                subscribedCities: [...state.subscribedCities, { cityId: action.cityId, cityName: action.cityName }]
             }
         }
         default: {

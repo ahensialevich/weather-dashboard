@@ -1,14 +1,16 @@
 .Search_cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     width: 100vw;
     height: 15vh;
 }
 
 // Style inspiration: https://codepen.io/Benny29390/pen/aWwybM
 .Search_bar {
-    height: 4vh;
+    margin: auto;
+    display: block;
+    height: 5vh;
     width: 30vw;
     border: 0;
     border-bottom: 2px solid #1976D2;
@@ -18,8 +20,7 @@
     background: transparent;
     color: #BBDEFB;
     &::placeholder {
-        color: #eaeaea;
-       // color: #1976D2;
+        color: #eaeaea; // color: #1976D2;
     }
     &:focus {
         outline: 0;
@@ -35,7 +36,9 @@
     transition: transform 200ms linear;
     height: 60px;
     width: 60px;
-    margin-left: 1vw;
+    position: absolute;
+    top: 1vh;
+    left: 66vw;
     i {
         font-size: 2.5rem;
         color: white;
@@ -43,5 +46,28 @@
     &:hover {
         background: darken(#FFAF3C, 10%);
         transform: rotate(90deg);
+    }
+}
+
+ul {
+    display: block;
+    margin: auto;
+    list-style-type: none;
+    border: 1px solid #1976D2;
+    padding: 0;
+    width: 40vw;
+}
+
+.Suggestion {
+    padding-left: 1vw;
+    height: 4vh;
+    font-size: 1.8rem;
+    color: #BBDEFB;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+        background: lighten(#1976D2, 15%);
     }
 }
