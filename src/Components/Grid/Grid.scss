@@ -1,0 +1,16 @@
+.Grid {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vw;
+    z-index: -7000;
+    position: relative;
+}
+
+.Item {
+    border: 3px solid white;
+    justify-self: center;
+    align-self: center;
+}

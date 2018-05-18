@@ -1,0 +1,45 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #1976D2;
+    .Header {
+        display: grid;
+        grid-template-columns: 2fr 3fr 1fr 1fr;
+        height: 9vh;
+        width: 100%;
+        background: lighten(#1976D2, 30%);
+        .Item {
+            font-size: 2rem;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+    .Data {
+        display: flex;
+        height: 7vh;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        color: white;
+    }
+}
+
+@mixin icons($color, $pointer) {
+    color: $color;
+    font-size: 2rem;
+    @if $pointer=='true' {
+        cursor: pointer;
+    }
+}
+
+.Sun {
+    @include icons(yellow, 'false');
+}
+
+.Trash {
+    @include icons(red, 'true');
+}
+
+.Refresh {
+    @include icons(black, 'true')
+}

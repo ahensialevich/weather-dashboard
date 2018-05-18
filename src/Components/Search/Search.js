@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as classes from './Search.scss';
 import Autosuggest from 'react-autosuggest';
 import { connect } from 'react-redux';
-import * as actions from '../Store/Actions/index';
+import * as actions from '../../Store/Actions/index';
 
 
 class Search extends Component {
@@ -17,7 +17,7 @@ class Search extends Component {
     getSuggestions = value => {
         const inputValue = value.toLowerCase().trim();
         const suggestions = inputValue.length === 0 ? [] : this.props.cities.filter(x => x.name.toLowerCase().startsWith(inputValue));
-        return suggestions.length > 10 ? suggestions.slice(0, 9) : suggestions;
+        return suggestions.length > 10 ? suggestions.slice(0, 10) : suggestions;
     };
 
     getSuggestionValue = suggestion => suggestion.name;
@@ -33,6 +33,7 @@ class Search extends Component {
     onAddCity = () => {
         const { id, name } = this.getSelectedCity(this.state.value);
         this.props.subscribedCities.some(x => x.cityId === id) ? console.log('Err') : this.props.onAddCity(id, name);
+        this.setState({ value: '' });
     }
 
     getSelectedCity = cityName => this.props.cities.find(x => x.name.toLowerCase === cityName.toLowerCase);

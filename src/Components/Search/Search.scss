@@ -2,6 +2,7 @@
     // display: flex;
     // justify-content: center;
     // align-items: center;
+    padding-top: 2vh;
     width: 100vw;
     height: 15vh;
 }
@@ -37,7 +38,7 @@
     height: 60px;
     width: 60px;
     position: absolute;
-    top: 1vh;
+    top: 3vh;
     left: 66vw;
     i {
         font-size: 2.5rem;
@@ -53,12 +54,14 @@ ul {
     display: block;
     margin: auto;
     list-style-type: none;
-    border: 1px solid #1976D2;
+    border: 4px solid #1976D2;
     padding: 0;
     width: 40vw;
+    z-index: 100;
 }
 
 .Suggestion {
+    background: #2196F3;
     padding-left: 1vw;
     height: 4vh;
     font-size: 1.8rem;

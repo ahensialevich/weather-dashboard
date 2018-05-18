@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import Search from '../../Components/Search';
+import Search from '../../Components/Search/Search';
+import Avx from '../../hoc/Avx';
+import Grid from '../../Components/Grid/Grid';
 
 class Main extends Component {
     render() {
         return (
-            <Search />
+            <Avx>
+                <Search />
+                <Grid />
+            </Avx>
         );
     }
 }
