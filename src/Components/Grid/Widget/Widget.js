@@ -5,7 +5,7 @@ const widget = props => (
     <div className={classes.Container}>
         <div className={classes.Header}>
             <div className={[classes.Item, classes.Sun].join(' ')}><i className="far fa-sun"></i></div>
-            <div className={[classes.Item, classes.Cityname].join(' ')}>{props.header}</div>
+            <div className={classes.Item}>{props.header}</div>
             <div className={[classes.Item, classes.Refresh].join(' ')}><i className="fas fa-sync"></i></div>
             <div className={[classes.Item, classes.Trash].join(' ')}><i className="fas fa-trash-alt"></i></div>
         </div>

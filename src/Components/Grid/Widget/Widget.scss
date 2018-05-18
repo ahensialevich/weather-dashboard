@@ -1,13 +1,14 @@
+@import '../../../__var.scss';
 .Container {
     display: flex;
     flex-direction: column;
-    border: 3px solid #1976D2;
+    border: 3px solid $mainDarkBlue;
     .Header {
         display: grid;
         grid-template-columns: 2fr 3fr 1fr 1fr;
         height: 9vh;
         width: 100%;
-        background: lighten(#1976D2, 30%);
+        background: lighten($mainDarkBlue, 30%);
         .Item {
             font-size: 2rem;
             justify-self: center;
@@ -20,26 +21,25 @@
         justify-content: center;
         align-items: center;
         font-size: 2.5rem;
-        color: white;
+        color: $mainLightBlue;
     }
 }
 
 @mixin icons($color, $pointer) {
     color: $color;
-    font-size: 2rem;
     @if $pointer=='true' {
         cursor: pointer;
     }
 }
 
 .Sun {
-    @include icons(yellow, 'false');
+    @include icons($sunYellow, 'false');
 }
 
 .Trash {
-    @include icons(red, 'true');
+    @include icons($trashRed, 'true');
 }
 
 .Refresh {
-    @include icons(black, 'true')
+    @include icons(black, 'true');
 }
