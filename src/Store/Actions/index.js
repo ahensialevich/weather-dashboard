@@ -1,1 +1,1 @@
-export { getAllCities, getAllCitiesSucceeded, addCity } from './actions';
+export { getAllCities, getAllCitiesSucceeded, addCity, refreshWeather, refreshWeatherSucceeded } from './actions';

@@ -19,6 +19,20 @@ const reducer = (state = initialState, action) => {
                 subscribedCities: [...state.subscribedCities, { cityId: action.cityId, cityName: action.cityName }]
             }
         }
+        case actionTypes.REFRESH_WEATHER_SUCCEEDED: {
+            const city = state.subscribedCities.findIndex(x => x.cityId === action.cityId);
+            const cities = [...state.subscribedCities];
+            cities[city] = {
+                ...cities[city],
+                cloudPercentage: action.cloudPercentage,
+                rainAmount: action.rainAmount,
+                temperature: action.temperature
+            }
+            return {
+                ...state,
+                subscribedCities: cities
+            }
+        }
         default: {
             return state;
         }

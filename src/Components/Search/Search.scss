@@ -18,12 +18,13 @@
     padding: 10px;
     background: transparent;
     color: $mainLightBlue;
+    transition: border-bottom 500ms linear;
     &::placeholder {
         color: $mainLightBlue; // color: $mainDarkBlue;
     }
     &:focus {
         outline: 0;
-        color: $mainLightBlue;
+        border-bottom: 2px solid transparent;
     }
 }
 
