@@ -9,6 +9,9 @@
     color: $color;
     @if $pointer=='true' {
         cursor: pointer;
+        &:hover {
+            color: darken($color, 10%)
+        }
     }
 }
 
@@ -40,6 +43,10 @@
     }
 }
 
+.Cloud {
+    @include icons($cloudGrey, 'fasle');
+}
+
 .Sun {
     @include icons($sunYellow, 'false');
 }
@@ -50,4 +57,8 @@
 
 .Refresh {
     @include icons(black, 'true');
+    transition: transform 200ms linear;
+    &:hover {
+        transform: rotate(180deg);
+    }
 }

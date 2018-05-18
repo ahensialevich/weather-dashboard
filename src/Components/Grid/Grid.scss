@@ -5,7 +5,7 @@
     grid-template-rows: auto;
     grid-column-gap: 1vw;
     grid-row-gap: 1vw;
-    z-index: -7000;
+    z-index: 99;
     position: relative;
     @media (max-width: 978px) {
         grid-template-columns: 1fr 1fr 1fr;

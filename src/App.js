@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import Main from './Containers/Main/Main';
 import { connect } from 'react-redux';
 import * as actions from './Store/Actions/index';
 import axios from './http/axios';
 import { GET_CITIES } from './http/urls';
+import Avx from './hoc/Avx';
+import Search from './Components/Search/Search';
+import Grid from './Components/Grid/Grid';
 
 class App extends Component {
 
@@ -12,7 +14,12 @@ class App extends Component {
   }
 
   render() {
-    return (<Main />);
+    return (
+      <Avx>
+        <Search />
+        <Grid />
+      </Avx>
+    );
   }
 }
 

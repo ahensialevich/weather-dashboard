@@ -27,7 +27,7 @@ class Grid extends Component {
                 <Widget temperature='20' header='Wroclaw' cloudPercentage='90' rainAmount='0.8' />
                 <Widget temperature='20' header='Wroclaw' cloudPercentage='90' rainAmount='0.8' />
                 <Widget temperature='20' header='Wroclaw' cloudPercentage='90' rainAmount='0.8' />
-                <Widget temperature='20' header='Wroclaw' cloudPercentage='90' rainAmount='0.8' />
+                <Widget temperature='20' header='Wroclaw' cloudPercentage='40' rainAmount='0.8' />
             </div>
         );
     }
