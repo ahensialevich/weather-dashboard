@@ -36,7 +36,7 @@ class Grid extends Component {
 };
 
 const mapStateToProps = state => ({
-    subscribedCities: state.subscribedCities
+    subscribedCities: state.weather.subscribedCities
 });
 
 const mapDispatchToProps = dispatch => ({

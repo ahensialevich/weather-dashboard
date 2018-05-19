@@ -7,4 +7,10 @@ export {
     deleteCity,
     getSubscribedCities,
     getSubscribedCitiesSucceeded
-} from './actions';
+} from './weather';
+export {
+    enableLoading,
+    disableLoading,
+    setError,
+    removeError
+} from './helper';

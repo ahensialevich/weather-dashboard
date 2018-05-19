@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  subscribedCities: state.subscribedCities
+  subscribedCities: state.weather.subscribedCities
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

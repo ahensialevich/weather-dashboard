@@ -68,8 +68,8 @@ class Search extends Component {
 };
 
 const mapStateToProps = state => ({
-    cities: state.cities,
-    subscribedCities: state.subscribedCities
+    cities: state.weather.cities,
+    subscribedCities: state.weather.subscribedCities
 });
 
 const mapDispatchToProps = dispatch => ({

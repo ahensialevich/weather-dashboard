@@ -4,20 +4,20 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.scss';
 import registerServiceWorker from './registerServiceWorker';
-import { createStore, compose, applyMiddleware } from 'redux';
+import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { rootSaga } from './Store/Sagas/rootSaga';
-import reducer from './Store/Reducers/reducer';
-
+import weather from './Store/Reducers/weather';
+import helper from './Store/Reducers/helper';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-//const rootReducer = combineReducers();
+const rootReducer = combineReducers({ weather, helper });
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
-    reducer,
+    rootReducer,
     composeEnhancers(applyMiddleware(sagaMiddleware))
 );
 
