@@ -10,26 +10,28 @@ class Grid extends Component {
     onDeleteCityHandler = cityId => this.props.onDelete(cityId);
 
     render() {
-        const widgets = this.props.subscribedCities.map(city => (
-            <Widget
-                key={city.cityId}
-                temperature={city.temperature}
-                header={city.cityName}
-                cloudPercentage={city.cloudPercentage}
-                rainAmount={city.rainAmount}
-                onRefreshWeather={this.onRefreshWeatherHandler(city.cityId)}
-                onDeleteWidget={this.onDeleteCityHandler(city.cityId)}
-            />));
-        return (
-            <div className={classes.Grid}>
-                <Widget temperature='20' header='Wroclaw' cloudPercentage='90' rainAmount='0.8' />
-                <Widget temperature='20' header='Wroclaw' cloudPercentage='90' rainAmount='0.8' />
-                <Widget temperature='20' header='Wroclaw' cloudPercentage='90' rainAmount='0.8' />
-                <Widget temperature='20' header='Wroclaw' cloudPercentage='90' rainAmount='0.8' />
-                <Widget temperature='20' header='Wroclaw' cloudPercentage='90' rainAmount='0.8' />
-                <Widget temperature='20' header='Wroclaw' cloudPercentage='40' rainAmount='0.8' />
-            </div>
-        );
+        let widgets = null;
+        if (this.props.subscribedCities.length > 0) {
+            widgets =
+                <div className={classes.Grid}>
+                    {
+                        this.props.subscribedCities.map(city => (
+                            <Widget
+                                cityId={city.cityId}
+                                key={city.cityId}
+                                temperature={city.temperature}
+                                header={city.cityName}
+                                cloudPercentage={city.cloudPercentage}
+                                rainAmount={city.rainAmount}
+                                onRefreshWeather={this.onRefreshWeatherHandler}
+                                onDeleteWidget={this.onDeleteCityHandler}
+                            />))
+                    }
+                </div>
+        } else {
+            widgets = <div className={classes.No_Cities}>Please, add some cities!</div>
+        }
+        return widgets;
     }
 };
 

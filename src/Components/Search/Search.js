@@ -32,11 +32,16 @@ class Search extends Component {
 
     onAddCity = () => {
         const { id, name } = this.getSelectedCity(this.state.value);
-        this.props.subscribedCities.some(x => x.cityId === id) ? console.log('Err') : this.props.onAddCity(id, name);
-        this.setState({ value: '' });
+        if (!this.props.subscribedCities.some(x => x.cityId === id)) {
+            this.props.onAddCity(id, name);
+            this.props.onRefreshWeather(id);
+            this.setState({ value: '' });
+        } else {
+            console.log('Err')
+        }
     }
 
-    getSelectedCity = cityName => this.props.cities.find(x => x.name.toLowerCase === cityName.toLowerCase);
+    getSelectedCity = cityName => this.props.cities.find(x => x.name.toLowerCase() === cityName.toLowerCase());
 
     render() {
         const { value, citiesToSuggest } = this.state;
@@ -68,7 +73,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onAddCity: (cityId, cityName) => dispatch(actions.addCity(cityId, cityName))
+    onAddCity: (cityId, cityName) => dispatch(actions.addCity(cityId, cityName)),
+    onRefreshWeather: cityId => dispatch(actions.refreshWeather(cityId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

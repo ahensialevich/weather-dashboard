@@ -36,7 +36,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.DELETE_CITY: {
             const cityIndex = state.subscribedCities.findIndex(x => x.cityId === action.cityId);
             let cities = [...state.subscribedCities];
-            cities = cities.splice(cityIndex, 1);
+            cities.splice(cityIndex, 1);
             return {
                 ...state,
                 subscribedCities: cities

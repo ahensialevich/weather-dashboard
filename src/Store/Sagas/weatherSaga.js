@@ -14,8 +14,9 @@ export function* getAllCitiesSaga() {
 
 export function* refreshWeatherSaga(action) {
     try {
-        const { cloudPercentage, rainAmount, temperature } = yield axios.get(GET_WEATHER + action.cityId);
-        yield put(actions.refreshWeatherSucceeded(cloudPercentage, rainAmount, temperature));
+        const response = yield axios.get(GET_WEATHER + action.cityId);
+        const { cloudPercentage, rainAmount, temperature } = response.data;
+        yield put(actions.refreshWeatherSucceeded(cloudPercentage, rainAmount, temperature, action.cityId));
     } catch (err) {
         console.log(err);
     }

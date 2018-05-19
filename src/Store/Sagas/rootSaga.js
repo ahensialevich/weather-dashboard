@@ -1,4 +1,4 @@
-import { getAllCitiesSaga, refreshWeatherSaga } from './saga';
+import { getAllCitiesSaga, refreshWeatherSaga } from './weatherSaga';
 import * as actionTypes from '../Actions/actionTypes';
 import { takeEvery } from 'redux-saga/effects';
 
