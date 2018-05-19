@@ -10,6 +10,19 @@ class App extends Component {
 
   componentDidMount() {
     this.props.onGetAllCities();
+    window.addEventListener('beforeunload', this.componentCleanup);
+    let subscribedCities = localStorage.getItem('subscribedCities');
+    if (subscribedCities) {
+      subscribedCities = JSON.parse(subscribedCities);
+      this.props.onSetSubscribedCitiesFromLocalStorage(subscribedCities);
+    }
+  }
+
+  componentCleanup = () => {
+    console.log(this.props.subscribedCities);
+    if (this.props.subscribedCities.length > 0) {
+      localStorage.setItem('subscribedCities', JSON.stringify(this.props.subscribedCities));
+    }
   }
 
   render() {
@@ -18,7 +31,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onGetAllCities: () => dispatch(actions.getAllCities())
+  onGetAllCities: () => dispatch(actions.getAllCities()),
+  onSetSubscribedCitiesFromLocalStorage: cities => dispatch(actions.setSubscribedCitiesFromLocalStorage(cities))
 });
 
 const mapStateToProps = state => ({

@@ -6,7 +6,8 @@ export {
     refreshWeatherSucceeded,
     deleteCity,
     getSubscribedCities,
-    getSubscribedCitiesSucceeded
+    getSubscribedCitiesSucceeded,
+    setSubscribedCitiesFromLocalStorage
 } from './weather';
 export {
     enableLoading,
