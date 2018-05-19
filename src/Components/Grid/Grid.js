@@ -39,7 +39,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     onRefresh: cityId => dispatch(actions.refreshWeather(cityId)),
-    onDelete: cityId => dispatch()
+    onDelete: cityId => dispatch(actions.deleteCity(cityId))
 });
 
-export default connect(mapStateToProps)(Grid);
+export default connect(mapStateToProps, mapDispatchToProps)(Grid);

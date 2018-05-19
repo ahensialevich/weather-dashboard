@@ -2,7 +2,7 @@ import React from 'react';
 import * as classes from './Widget.scss';
 
 const widget = props => {
-    const icon = Number(props.cloudPercentage) >= 50 ? <div className={[classes.Item, classes.Cloud].join(' ')}><i class="fas fa-cloud"></i></div> :
+    const icon = Number(props.cloudPercentage) >= 50 ? <div className={[classes.Item, classes.Cloud].join(' ')}><i className="fas fa-cloud"></i></div> :
         <div className={[classes.Item, classes.Sun].join(' ')}><i className="far fa-sun"></i></div>;
     return (
         <div className={classes.Container}>

@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import { watchSaga } from './Store/Sagas/rootSaga';
+import { rootSaga } from './Store/Sagas/rootSaga';
 import reducer from './Store/Reducers/reducer';
 
 
@@ -21,7 +21,7 @@ const store = createStore(
     composeEnhancers(applyMiddleware(sagaMiddleware))
 );
 
-sagaMiddleware.run(watchSaga);
+sagaMiddleware.run(rootSaga);
 
 const app = (
     <Provider store={store}>

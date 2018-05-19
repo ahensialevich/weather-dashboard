@@ -1,1 +1,10 @@
-export { getAllCities, getAllCitiesSucceeded, addCity, refreshWeather, refreshWeatherSucceeded } from './actions';
+export {
+    getAllCities,
+    getAllCitiesSucceeded,
+    addCity,
+    refreshWeather,
+    refreshWeatherSucceeded,
+    deleteCity,
+    getSubscribedCities,
+    getSubscribedCitiesSucceeded
+} from './actions';

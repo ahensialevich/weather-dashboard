@@ -6,3 +6,8 @@ export const getAllCitiesSucceeded = cities => ({ type: actionTypes.GET_ALL_CITI
 
 export const refreshWeather = cityId => ({ type: actionTypes.REFRESH_WEATHER, cityId });
 export const refreshWeatherSucceeded = (cloudPercentage, rainAmount, temperature) => ({ type: actionTypes.REFRESH_WEATHER, cloudPercentage, rainAmount, temperature });
+
+export const deleteCity = cityId => ({ type: actionTypes.DELETE_CITY, cityId });
+
+export const getSubscribedCities = () => ({ type: actionTypes.GET_SUBSCRIBED_CITIES });
+export const getSubscribedCitiesSucceeded = subscribedCities => ({ type: actionTypes.GET_SUBSCRIBED_CITIES, subscribedCities });

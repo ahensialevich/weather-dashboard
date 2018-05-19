@@ -20,10 +20,10 @@ const reducer = (state = initialState, action) => {
             }
         }
         case actionTypes.REFRESH_WEATHER_SUCCEEDED: {
-            const city = state.subscribedCities.findIndex(x => x.cityId === action.cityId);
+            const cityIndex = state.subscribedCities.findIndex(x => x.cityId === action.cityId);
             const cities = [...state.subscribedCities];
-            cities[city] = {
-                ...cities[city],
+            cities[cityIndex] = {
+                ...cities[cityIndex],
                 cloudPercentage: action.cloudPercentage,
                 rainAmount: action.rainAmount,
                 temperature: action.temperature
@@ -31,6 +31,21 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 subscribedCities: cities
+            }
+        }
+        case actionTypes.DELETE_CITY: {
+            const cityIndex = state.subscribedCities.findIndex(x => x.cityId === action.cityId);
+            let cities = [...state.subscribedCities];
+            cities = cities.splice(cityIndex, 1);
+            return {
+                ...state,
+                subscribedCities: cities
+            }
+        }
+        case actionTypes.GET_SUBSCRIBED_CITIES_SUCCEEDED: {
+            return {
+                ...state,
+                subscribedCities: action.cities
             }
         }
         default: {
