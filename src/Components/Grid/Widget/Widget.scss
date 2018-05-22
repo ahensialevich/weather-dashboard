@@ -1,10 +1,4 @@
 @import '../../../__var.scss';
-@mixin media() {
-    @media (max-width: 1285px) {
-        font-size: 1.5rem;
-    }
-}
-
 .Selectable {
     cursor: pointer;
 }
@@ -37,8 +31,14 @@
         }
     }
     .Data {
-        @include media-height(710px) {
+        @include media-height(670px) {
             font-size: 1rem;
+        }
+        @media (max-width: 821px) and (orientation: portrait) {
+            font-size: 1.5rem;
+        }
+        @media (max-height: 965px) and (orientation: landscape) {
+            font-size: 1.5rem;
         }
         padding-left: 1vw;
         background-color: $widgetDark;
@@ -48,6 +48,5 @@
         align-items: center;
         font-size: 2rem;
         color: $lightGrey;
-        @include media();
     }
 }

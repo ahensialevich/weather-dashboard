@@ -34,6 +34,9 @@
     @include media-width(1200px) {
         height: 40px;
     }
+    @include media-height(510px) {
+        height: 30px;
+    }
     margin-left: 1vw;
     cursor: pointer;
     transition: transform 200ms linear;
