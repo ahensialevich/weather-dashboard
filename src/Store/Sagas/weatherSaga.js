@@ -27,10 +27,3 @@ export function* refreshWeatherSaga(action) {
         yield put(actions.disableLoading());
     }
 }
-
-// export function* getSubscribedCitiesSaga() {
-//     const subscribedCities = JSON.parse(localStorage.getItem('subscribedCities'));
-//     if (subscribedCities) {
-//         yield put(actions.getSubscribedCities(subscribedCities));
-//     }
-// }

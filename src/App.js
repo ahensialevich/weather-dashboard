@@ -27,7 +27,15 @@ class App extends Component {
   }
 
   render() {
-    return this.props.loading ? <Spinner /> : (<Wrapper><Header />><Search /><Grid /></Wrapper>);
+    const loading = this.props.loading ? <Spinner /> : null;
+    return (
+      <Wrapper>
+        {loading}
+        <Header />
+        <Search />
+        <Grid />
+      </Wrapper>
+    );
   }
 }
 

@@ -1,4 +1,10 @@
 @import '../../__var.scss';
+@mixin media($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
 .Search_cont {
     margin-top: 10vh;
     width: 100vw;
@@ -9,9 +15,12 @@
 }
 
 .Search_bar {
+    @include media(1200px){
+        width: 50vw;
+    }
     margin-left: 1vw;
     height: 3vh;
-    width: 20vw;
+    width: 30vw;
     color: $darkGrey;
     font-size: 1.1rem;
     border: solid 1px white;
@@ -24,10 +33,13 @@
 }
 
 .Add_button {
+    @include media(1200px){
+        height: 40px;
+    }
     margin-left: 1vw;
     cursor: pointer;
     transition: transform 200ms linear;
-    height: 55px;
+    height: 52px;
     &:hover {
         transform: rotate(90deg);
     }
@@ -45,7 +57,10 @@ ul {
 }
 
 .Suggestion {
-    width: 20vw;
+    @include media(1200px){
+        width: 50vw;
+    }
+    width: 30vw;
     background: white;
     font-weight: bold;
     padding: 7px;
