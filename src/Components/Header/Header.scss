@@ -6,6 +6,7 @@
 }
 
 .Header {
+    z-index: 150;
     display: flex;
     position: fixed;
     top: 0;
@@ -25,10 +26,7 @@
         }
     }
     img {
-        @media (max-height: 950px) {
-            width: 4vw;
-            height: auto;
-        }
+        width: 55px;
         @include moveToTop();
         margin-right: 1vw;
     }

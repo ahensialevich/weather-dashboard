@@ -13,11 +13,11 @@
     height: 3vh;
     width: 20vw;
     color: $darkGrey;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border: solid 1px white;
     border-radius: 3px;
     background-color: white;
-    padding: 10px;
+    padding: 7px;
     &:focus {
         outline: $peach auto 6px;
     }
@@ -48,9 +48,9 @@ ul {
     width: 20vw;
     background: white;
     font-weight: bold;
-    padding: 10px;
+    padding: 7px;
     height: 3vh;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: $darkGrey;
     display: flex;
     justify-content: flex-start;

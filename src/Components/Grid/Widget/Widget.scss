@@ -5,60 +5,40 @@
     }
 }
 
-@mixin icons($color, $pointer) {
-    color: $color;
-    @if $pointer=='true' {
-        cursor: pointer;
-        &:hover {
-            color: darken($color, 10%)
-        }
-    }
+.Selectable {
+    cursor: pointer;
 }
 
 .Container {
     display: flex;
     flex-direction: column;
-    border: 3px solid $mainDarkBlue;
     .Header {
+        color: white;
         display: grid;
         grid-template-columns: 2fr 3fr 1fr 1fr;
-        height: 9vh;
+        height: 6vh;
         width: 100%;
-        background: lighten($mainDarkBlue, 30%);
-        .Item {
-            font-size: 2rem;
+        background-color: $coralRed;
+        img {
+            width: 35px;
             justify-self: center;
             align-self: center;
-            @include media();
+        }
+        .CityName {
+            justify-self: center;
+            align-self: center;
+            font-size: 1.5rem;
         }
     }
     .Data {
+        padding-left: 1vw;
+        background-color: $widgetDark;
         display: flex;
         height: 7vh;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        font-size: 2.5rem;
-        color: $mainLightBlue;
+        font-size: 1.8rem;
+        color: $lightGrey;
         @include media();
-    }
-}
-
-.Cloud {
-    @include icons($cloudGrey, 'fasle');
-}
-
-.Sun {
-    @include icons($sunYellow, 'false');
-}
-
-.Trash {
-    @include icons($trashRed, 'true');
-}
-
-.Refresh {
-    @include icons(black, 'true');
-    transition: transform 200ms linear;
-    &:hover {
-        transform: rotate(180deg);
     }
 }

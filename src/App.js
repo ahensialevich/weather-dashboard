@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './Store/Actions/index';
-import Avx from './hoc/Avx';
+import Wrapper from './Components/Wrapper/Wrapper';
 import Search from './Components/Search/Search';
 import Grid from './Components/Grid/Grid';
-import Spinner from './UI/Spinner/Spinner';
+import Spinner from './Components/Spinner/Spinner';
 import Header from './Components/Header/Header';
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   render() {
-    return this.props.loading ? <Spinner /> : (<Avx><Header />><Search /><Grid /></Avx>);
+    return this.props.loading ? <Spinner /> : (<Wrapper><Header />><Search /><Grid /></Wrapper>);
   }
 }
 
