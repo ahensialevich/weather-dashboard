@@ -27,3 +27,18 @@ export function* refreshWeatherSaga(action) {
         yield put(actions.disableLoading());
     }
 }
+
+export function* setSubscribedCitiesFromLocalStorageSaga(action) {
+    try {
+        yield put(actions.enableLoading());
+        const requests = action.subscribedCities.map(city => axios.get(GET_WEATHER + city.cityId));
+        let response = yield Promise.all(requests);
+        response = response.map(x => x.data);
+        const subscribedCities = action.subscribedCities.map((city, index) => ({ ...city, ...response[index] }));
+        yield put(actions.setSubscribedCitiesFromLocalStorageSucceded(subscribedCities));
+        yield put(actions.disableLoading());
+    } catch (err) {
+        yield put(actions.setError(err));
+        yield put(actions.disableLoading());
+    }
+}

@@ -20,24 +20,33 @@
         width: 100%;
         background-color: $coralRed;
         img {
+            @include media-height(710px) {
+                width: 20px;
+            }
             width: 35px;
             justify-self: center;
             align-self: center;
         }
         .CityName {
+            @include media-height(710px) {
+                font-size: 1rem;
+            }
             justify-self: center;
             align-self: center;
             font-size: 1.5rem;
         }
     }
     .Data {
+        @include media-height(710px) {
+            font-size: 1rem;
+        }
         padding-left: 1vw;
         background-color: $widgetDark;
         display: flex;
         height: 7vh;
         justify-content: flex-start;
         align-items: center;
-        font-size: 1.8rem;
+        font-size: 2rem;
         color: $lightGrey;
         @include media();
     }

@@ -4,3 +4,14 @@ $hoverPeach:#FDE7E3;
 $darkGrey: #5F5F5F;
 $widgetDark: #243842;
 $lightGrey: #d3d3d3;
+@mixin media-width($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin media-height($height) {
+    @media (max-height: $height) {
+        @content;
+    }
+}

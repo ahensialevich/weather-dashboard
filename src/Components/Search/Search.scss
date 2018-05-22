@@ -1,9 +1,4 @@
 @import '../../__var.scss';
-@mixin media($width) {
-    @media (max-width: $width) {
-        @content;
-    }
-}
 
 .Search_cont {
     margin-top: 10vh;
@@ -15,8 +10,11 @@
 }
 
 .Search_bar {
-    @include media(1200px){
+    @include media-width(1200px) {
         width: 50vw;
+    }
+    @include media-width(474px) {
+        width: auto;
     }
     margin-left: 1vw;
     height: 3vh;
@@ -33,7 +31,7 @@
 }
 
 .Add_button {
-    @include media(1200px){
+    @include media-width(1200px) {
         height: 40px;
     }
     margin-left: 1vw;
@@ -43,6 +41,13 @@
     &:hover {
         transform: rotate(90deg);
     }
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+input[type=image]:disabled {
+    cursor: not-allowed;
 }
 
 ul {
@@ -57,7 +62,7 @@ ul {
 }
 
 .Suggestion {
-    @include media(1200px){
+    @include media-width(1200px) {
         width: 50vw;
     }
     width: 30vw;

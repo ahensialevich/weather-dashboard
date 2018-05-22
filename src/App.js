@@ -41,7 +41,7 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => ({
   onGetAllCities: () => dispatch(actions.getAllCities()),
-  onSetSubscribedCitiesFromLocalStorage: cities => dispatch(actions.setSubscribedCitiesFromLocalStorage(cities))
+  onSetSubscribedCitiesFromLocalStorage: subscribedCities => dispatch(actions.setSubscribedCitiesFromLocalStorage(subscribedCities))
 });
 
 const mapStateToProps = state => ({

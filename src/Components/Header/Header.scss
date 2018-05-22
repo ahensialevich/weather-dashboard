@@ -21,13 +21,16 @@
         font-family: 'Pacifico', cursive;
         font-size: 2rem;
         color: white;
-        @media (max-height: 950px) {
-            font-size: 1.5rem;
+        @include media-height(710px) {
+            font-size: 1rem;
         }
     }
     img {
-        width: 55px;
         @include moveToTop();
+        @include media-height(710px) {
+            width: 25px;
+        }
+        width: 55px;
         margin-right: 1vw;
     }
 }

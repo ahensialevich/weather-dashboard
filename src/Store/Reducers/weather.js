@@ -13,10 +13,10 @@ const reducer = (state = initialState, action) => {
                 cities: action.cities
             }
         }
-        case actionTypes.SET_SUBSCRIBED_CITIES_FROM_LOCAL_STORAGE: {
+        case actionTypes.SET_SUBSCRIBED_CITIES_FROM_LOCAL_STORAGE_SUCCEDED: {
             return {
                 ...state,
-                subscribedCities: action.cities
+                subscribedCities: action.subscribedCities
             }
         }
         case actionTypes.ADD_CITY: {

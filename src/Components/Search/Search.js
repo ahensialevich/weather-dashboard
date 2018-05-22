@@ -11,7 +11,8 @@ class Search extends Component {
         super();
         this.state = {
             value: '',
-            citiesToSuggest: []
+            citiesToSuggest: [],
+            valid: false
         };
     }
 
@@ -25,7 +26,20 @@ class Search extends Component {
 
     renderSuggestion = suggestion => <div className={classes.Suggestion}>{suggestion.name}</div>;
 
-    onChange = (_, { newValue }) => this.setState({ value: newValue });
+    onChange = (_, { newValue }) => {
+        const isValid = this.checkValidity(newValue);
+        this.setState({ value: newValue, valid: isValid });
+    };
+
+    checkValidity = newValue => {
+        const findedCity = this.getSelectedCity(newValue);
+        if (findedCity) {
+            if (!this.props.subscribedCities.some(x => x.cityId === findedCity.id)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     onSuggestionsClearRequested = () => this.setState({ citiesToSuggest: [] });
 
@@ -33,13 +47,9 @@ class Search extends Component {
 
     onAddCity = () => {
         const { id, name } = this.getSelectedCity(this.state.value);
-        if (!this.props.subscribedCities.some(x => x.cityId === id)) {
-            this.props.onAddCity(id, name);
-            this.props.onRefreshWeather(id);
-            this.setState({ value: '' });
-        } else {
-            console.log('Err')
-        }
+        this.props.onAddCity(id, name);
+        this.props.onRefreshWeather(id);
+        this.setState({ value: '' });
     }
 
     getSelectedCity = cityName => this.props.cities.find(x => x.name.toLowerCase() === cityName.toLowerCase());
@@ -62,7 +72,12 @@ class Search extends Component {
                     renderSuggestion={this.renderSuggestion}
                     getSuggestionValue={this.getSuggestionValue}
                     inputProps={inputProps} />
-                <img src={addButton} alt='add' onClick={this.onAddCity} className={classes.Add_button} />
+                <input type='image'
+                    src={addButton}
+                    alt='add-button'
+                    disabled={!this.state.valid}
+                    onClick={this.onAddCity}
+                    className={classes.Add_button} />
             </div>
         )
     }
