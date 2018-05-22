@@ -3,6 +3,7 @@ import * as classes from './Search.scss';
 import Autosuggest from 'react-autosuggest';
 import { connect } from 'react-redux';
 import * as actions from '../../Store/Actions/index';
+import addButton from '../../assets/plus.png';
 
 
 class Search extends Component {
@@ -61,7 +62,7 @@ class Search extends Component {
                     renderSuggestion={this.renderSuggestion}
                     getSuggestionValue={this.getSuggestionValue}
                     inputProps={inputProps} />
-                <button onClick={this.onAddCity} className={classes.Add_button} type='button'><i className="fas fa-plus"></i></button>
+                <img src={addButton} alt='add' onClick={this.onAddCity} className={classes.Add_button} />
             </div>
         )
     }

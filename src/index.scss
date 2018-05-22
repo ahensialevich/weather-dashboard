@@ -1,5 +1,7 @@
 @import './__var.scss';
 body {
-    background: $mainBlue;
+    background: url('./assets//background.png');
     font-family: 'Muli', sans-serif;
+    background-size: cover;
+    background-repeat: repeat;
 }

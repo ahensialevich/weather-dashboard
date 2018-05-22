@@ -5,6 +5,7 @@ import Avx from './hoc/Avx';
 import Search from './Components/Search/Search';
 import Grid from './Components/Grid/Grid';
 import Spinner from './UI/Spinner/Spinner';
+import Header from './Components/Header/Header';
 
 class App extends Component {
 
@@ -26,7 +27,7 @@ class App extends Component {
   }
 
   render() {
-    return this.props.loading ? <Spinner /> : (<Avx><Search /><Grid /></Avx>);
+    return this.props.loading ? <Spinner /> : (<Avx><Header />><Search /><Grid /></Avx>);
   }
 }
 

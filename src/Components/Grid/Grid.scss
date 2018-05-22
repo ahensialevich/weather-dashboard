@@ -1,6 +1,6 @@
 @import '../../__var.scss';
 .Grid {
-    margin: 0 1vw;
+    margin: 1vw 1vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -20,6 +20,7 @@
 }
 
 .No_Cities {
+    margin-top: 2vh;
     display: flex;
     width: 100vw;
     justify-content: center;

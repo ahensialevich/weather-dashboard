@@ -1,0 +1,35 @@
+@import '../../__var.scss';
+@mixin moveToTop() {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.Header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    background: $coralRed;
+    box-shadow: 0px 4px 13px -2px rgba(0, 0, 0, 0.75);
+    h1 {
+        @include moveToTop();
+        font-family: 'Pacifico', cursive;
+        font-size: 2rem;
+        color: white;
+        @media (max-height: 950px) {
+            font-size: 1.5rem;
+        }
+    }
+    img {
+        @media (max-height: 950px) {
+            width: 4vw;
+            height: auto;
+        }
+        @include moveToTop();
+        margin-right: 1vw;
+    }
+}
