@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as classes from './Search.scss';
 import Autosuggest from 'react-autosuggest';
 import { connect } from 'react-redux';
-import * as actions from '../../Store/Actions/index';
+import * as weatherActions from '../../Store/Actions/weather';
 import addButton from '../../assets/plus.png';
 
 
@@ -49,7 +49,7 @@ class Search extends Component {
         const { id, name } = this.getSelectedCity(this.state.value);
         this.props.onAddCity(id, name);
         this.props.onRefreshWeather(id);
-        this.setState({ value: '' });
+        this.setState({ value: '', valid: false });
     }
 
     getSelectedCity = cityName => this.props.cities.find(x => x.name.toLowerCase() === cityName.toLowerCase());
@@ -89,8 +89,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onAddCity: (cityId, cityName) => dispatch(actions.addCity(cityId, cityName)),
-    onRefreshWeather: cityId => dispatch(actions.refreshWeather(cityId))
+    onAddCity: (cityId, cityName) => dispatch(weatherActions.addCity(cityId, cityName)),
+    onRefreshWeather: cityId => dispatch(weatherActions.refreshWeather(cityId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

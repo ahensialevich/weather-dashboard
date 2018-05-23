@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as classes from './Grid.scss';
 import Widget from './Widget/Widget';
 import { connect } from 'react-redux';
-import * as actions from '../../Store/Actions/index';
+import * as weatherActions from '../../Store/Actions/weather';
 
 class Grid extends Component {
 
@@ -40,8 +40,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onRefresh: cityId => dispatch(actions.refreshWeather(cityId)),
-    onDelete: cityId => dispatch(actions.deleteCity(cityId))
+    onRefresh: cityId => dispatch(weatherActions.refreshWeather(cityId)),
+    onDelete: cityId => dispatch(weatherActions.deleteCity(cityId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Grid);

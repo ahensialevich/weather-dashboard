@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from './Store/Actions/index';
+import * as weatherActions from './Store/Actions/weather';
 import Wrapper from './Components/Wrapper/Wrapper';
 import Search from './Components/Search/Search';
 import Grid from './Components/Grid/Grid';
@@ -40,8 +40,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onGetAllCities: () => dispatch(actions.getAllCities()),
-  onSetSubscribedCitiesFromLocalStorage: subscribedCities => dispatch(actions.setSubscribedCitiesFromLocalStorage(subscribedCities))
+  onGetAllCities: () => dispatch(weatherActions.getAllCities()),
+  onSetSubscribedCitiesFromLocalStorage: subscribedCities => dispatch(weatherActions.setSubscribedCitiesFromLocalStorage(subscribedCities))
 });
 
 const mapStateToProps = state => ({
