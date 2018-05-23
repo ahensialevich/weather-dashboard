@@ -1,7 +1,7 @@
 import * as actionTypes from '../Actions/actionTypes';
 
 const initialState = {
-    error: null,
+    error: false,
     loading: false
 }
 
@@ -20,13 +20,13 @@ const helperReducer = (state = initialState, action) => {
         case actionTypes.SET_ERROR: {
             return {
                 ...state,
-                error: action.error
+                error: true
             }
         }
         case actionTypes.REMOVE_ERROR: {
             return {
                 ...state,
-                error: null
+                error: false
             }
         }
         default: {

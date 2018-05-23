@@ -8,7 +8,7 @@ httpClient.interceptors.request.use(function (config) {
     config.headers = { ...config.headers, 'Authorization': AUTH_TOKEN }
     return config;
 }, function (error) {
-    return Promise.reject(error);
+    return error;
 });
 
 export default httpClient;

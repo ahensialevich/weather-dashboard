@@ -2,16 +2,16 @@ import * as helperActions from '../Actions/helper';
 import * as weatherActions from '../Actions/weather';
 import httpClient from '../../http/httpClient';
 import { GET_CITIES, GET_WEATHER } from '../../http/urls';
-import { put } from 'redux-saga/effects';
+import { put, call } from 'redux-saga/effects';
 
 export function* getAllCitiesSaga() {
     try {
+        const response = yield call(fetch, GET_CITIES);
         yield put(helperActions.enableLoading());
-        const response = yield httpClient.get(GET_CITIES);
         yield put(weatherActions.getAllCitiesSucceeded(response.data));
         yield put(helperActions.disableLoading());
     } catch (err) {
-        yield put(helperActions.setError(err));
+        yield put(helperActions.setError());
         yield put(helperActions.disableLoading());
     }
 }
@@ -19,12 +19,12 @@ export function* getAllCitiesSaga() {
 export function* refreshWeatherSaga(action) {
     try {
         yield put(helperActions.enableLoading());
-        const response = yield httpClient.get(GET_WEATHER + action.cityId);
+        const response = yield call(httpClient.get, GET_WEATHER + action.cityId);
         const { cloudPercentage, rainAmount, temperature } = response.data;
         yield put(weatherActions.refreshWeatherSucceeded(cloudPercentage, rainAmount, temperature, action.cityId));
         yield put(helperActions.disableLoading());
     } catch (err) {
-        yield put(helperActions.setError(err));
+        yield put(helperActions.setError());
         yield put(helperActions.disableLoading());
     }
 }
