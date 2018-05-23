@@ -6,8 +6,8 @@ import { put, call } from 'redux-saga/effects';
 
 export function* getAllCitiesSaga() {
     try {
-        const response = yield call(fetch, GET_CITIES);
         yield put(helperActions.enableLoading());
+        const response = yield call(httpClient, GET_CITIES);
         yield put(weatherActions.getAllCitiesSucceeded(response.data));
         yield put(helperActions.disableLoading());
     } catch (err) {
