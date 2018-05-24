@@ -1,5 +1,4 @@
 @import '../../__var.scss';
-
 .Search_cont {
     margin-top: 10vh;
     width: 100vw;
@@ -46,6 +45,9 @@
     }
     &:disabled {
         cursor: not-allowed;
+    }
+    &:focus {
+        outline: none
     }
 }
 
