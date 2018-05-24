@@ -7,7 +7,7 @@ const error = props => (
             <div className={classes.Header}><i className="far fa-times-circle"></i></div>
             <div className={classes.Body}>
                 <h1>Oh, snap!</h1>
-                <h2>Something goes wrong :(</h2>
+                <h2>Something's goes wrong :(</h2>
                 <button onClick={props.close} type='button' className={classes.Close}>Close <i className="fas fa-times"></i></button>
             </div>
         </div>
